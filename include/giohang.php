@@ -77,78 +77,94 @@
 		}
 	}
 ?>
-<!-- checkout page -->
-<div class="privacy py-sm-5 py-4">
-		<div class="container py-xl-4 py-lg-2">
-			<!-- tittle heading -->
-			<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
-				<span>G</span>iỏ hàng
-			</h3>
-			<?php
-					if(isset($_SESSION['dangnhap_home'])){
-						echo '<p style="color:#000;">Xin chào: '.$_SESSION['dangnhap_home'].'<a href="index.php?quanly=giohang&dangxuat=1">Đăng xuất</a></p>';
-						
-					}else{
-						echo '';
-					}
-				?>
-			<!-- //tittle heading -->
-			<div class="checkout-right">
-                <?php
-                    $sql_lay_giohang = mysqli_query($con,"SELECT * FROM tbl_giohang ORDER BY giohang_id DESC");
-                ?>
+<!-- Begin Li's Breadcrumb Area -->
+<div class="breadcrumb-area">
+	<div class="container">
+		<div class="breadcrumb-content">
+			<ul>
+				<li><a href="index.php">Trang chủ</a></li>
+				<li class="active">Giỏ hàng</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- Li's Breadcrumb Area End Here -->
+<!--Shopping Cart Area Strat-->
+<div class="Shopping-cart-area pt-60 pb-60">
+	<?php
+		$sql_lay_giohang = mysqli_query($con,"SELECT * FROM tbl_giohang ORDER BY giohang_id DESC");
+	?>
 				
-				<div class="table-responsive">
-                    <form method="POST" action="">
-					<table class="timetable_sub">
-						<thead>
-							<tr style="text-align: center;">
-								<th>Thứ tự</th>
-								<th>Sản phẩm</th>
-								<th>Số lượng</th>
-								<th>Tên sản phẩm</th>
-                                <th>Giá</th>
-                                <th>Giá tổng</th>
-								<th>Xóa sản phẩm</th>
-							</tr>
-						</thead>
-						<tbody>
-                            <?php
-                                $i=0;
-                                $total = 0;
-                                while($row_fetch_giohang = mysqli_fetch_array($sql_lay_giohang)){
-                                    $subtotal = $row_fetch_giohang['soluong'] * $row_fetch_giohang['giasanpham']; 
-                                    $total += $subtotal;
-                                    $i++;
-                            ?>
-							<tr class="rem1" style="text-align: center;">
-								<td class="invert"><?php echo $i?></td>
-								<td class="invert-image">
-									<a href="single.html">
-										<img src="uploads/<?php echo $row_fetch_giohang['hinhanh'] ?>" alt=" " style="width: 50%;">
-									</a>
-								</td>
-								<td class="invert">
-									<input type="number" min='0' name="soluong[]" value="<?php echo $row_fetch_giohang['soluong'] ?>">
-                                    <input type="hidden" name="product_id[]" value="<?php echo $row_fetch_giohang['sanpham_id'] ?>">
-                                </td>
-								<td class="invert"><?php echo $row_fetch_giohang['tensanpham'] ?></td>
-                                <td class="invert"><?php echo number_format($row_fetch_giohang['giasanpham']).' VNĐ' ?></td>
-                                <td class="invert"><?php echo number_format($subtotal).' VNĐ' ?></td>
-								<td class="invert">
-									<a href="?quanly=giohang&xoa=<?php echo $row_fetch_giohang['giohang_id']?>">Xóa</a>
-								</td>
-                            </tr>
-                            <?php
-                                }
-                            ?>
-                            <tr>
-                                <td colspan="7" style="text-align: center;">Tổng tiền: <?php echo number_format($total).' VNĐ' ?> </td>
-                            </tr>
-                            <tr>
-                                <td colspan="7">
-									<input type="submit" class="btn-thanhtoan" value="Cập nhật giỏ hàng" name="capnhatsoluong">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<form action="" method="POST">
+					<div class="table-content table-responsive">
+						
+							<table class="table">
+								<thead>
+									<tr>
+										<th class="li-product-remove">Xoá sản phẩm</th>
+										<th class="li-product-thumbnail">Hình ảnh</th>
+										<th class="cart-product-name">Sản phẩm</th>
+										<th class="li-product-price">Giá</th>
+										<th class="li-product-quantity">Số lượng</th>
+										<th class="li-product-subtotal">Tổng tiền</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php
+										
+										$total = 0;
+										while($row_fetch_giohang = mysqli_fetch_array($sql_lay_giohang)){
+											$subtotal = $row_fetch_giohang['soluong'] * $row_fetch_giohang['giasanpham']; 
+											$total += $subtotal;
+											
+									?>
+									<tr>
+										<td class="li-product-remove"><a href="?quanly=giohang&xoa=<?php echo $row_fetch_giohang['giohang_id']?>"><i class="fa fa-times"></i></a></td>
+										<td class="li-product-thumbnail">
+											<a href="#">
+												<img src="uploads/<?php echo $row_fetch_giohang['hinhanh'] ?>" style="width: 50%;" alt="Li's Product Image">
+											</a>
+										</td>
+										<td class="li-product-name"><a href="#"><?php echo $row_fetch_giohang['tensanpham'] ?></a></td>
+										<td class="li-product-price"><span class="amount"><?php echo number_format($row_fetch_giohang['giasanpham']).' VNĐ' ?></span></td>
+										<td class="quantity">
+											<label>Số lượng</label>
+											<div class="">
+												<input class="" name="soluong[]" type="number" min='0' value="<?php echo $row_fetch_giohang['soluong'] ?>">
+												<input type="hidden" name="product_id[]" value="<?php echo $row_fetch_giohang['sanpham_id'] ?>">
+												
+											</div>
+										</td>
+										<td class="product-subtotal"><span class="amount"><?php echo number_format($subtotal).' VNĐ' ?></span></td>
+									</tr>
+									
+									<?php
+										}
+									?>
+								</tbody>
+							</table>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="coupon-all">
 								
+								<div class="coupon2">
+									<input  name="capnhatsoluong" value="Cập nhật giỏ hàng" type="submit" style="background: #fed700;" class="btn btn-primary">
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-5 ml-auto">
+							<div class="cart-page-total">
+								<h2>Tổng tiền</h2>
+								<ul>
+									<li>Tổng tiền <span><?php echo number_format($total).' VNĐ' ?></span></li>
+								</ul>
 								<?php
 									$sql_giohang_select = mysqli_query($con,"SELECT * FROM tbl_giohang");
 									$count_giohang_select = mysqli_num_rows($sql_giohang_select);
@@ -160,79 +176,93 @@
 								<?php
 									}
 								?>
-									<input type="submit" class="btn-thanhtoan" value="Thanh toán" name="thanhtoandangnhap">
-										
-								</td>
+									<input type="submit" style="background: #fed700;" class="btn btn-primary" value="Thanh toán" name="thanhtoandangnhap">
 								<?php
 									}
 								?>
-							</tr>
-						</tbody>
-                    </table>
-                </form>
-				</div>
+							</div>
+						</div>
+					</div>
+				</form>
 			</div>
-			<?php
+		</div>
+	</div>
+</div>
+<!--Shopping Cart Area End-->
+<!-- checkout page -->
+<div class="privacy py-sm-5 py-4">
+	<div class="container py-xl-4 py-lg-2">
+		<?php
 			if(!isset($_SESSION['dangnhap_home'])){
-			?>
-			<div class="checkout-left">
-				<div class="address_form_agile mt-sm-5 mt-4">
-					<h4 class="mb-sm-4 mb-3">Thêm địa chỉ giao hàng</h4>
-					<form action="" method="post" class="creditly-card-form agileinfo_form">
-						<div class="creditly-wrapper wthree, w3_agileits_wrapper">
-							<div class="information-wrapper">
-								<div class="first-row">
-									<div class="controls form-group">
-										<input class="billing-address-name form-control" type="text" name="name" placeholder="Họ và tên" required="">
-									</div>
-									<div class="w3_agileits_card_number_grids">
-										<div class="w3_agileits_card_number_grid_left form-group">
-											<div class="controls">
-												<input type="text" class="form-control" placeholder="Số điện thoại" name="phone" required="">
-											</div>
-										</div>
-										<div class="w3_agileits_card_number_grid_right form-group">
-											<div class="controls">
-												<input type="text" class="form-control" placeholder="Địa chỉ" name="address" required="">
-											</div>
+		?>
+		<div class="checkout-left">
+			<div class="address_form_agile mt-sm-5 mt-4">
+				<h4 class="mb-sm-4 mb-3">Thêm địa chỉ giao hàng</h4>
+				<form action="" method="post" class="creditly-card-form agileinfo_form">
+					<div class="creditly-wrapper wthree, w3_agileits_wrapper">
+						<div class="information-wrapper">
+							<div class="first-row">
+								<div class="controls form-group">
+									<input class="billing-address-name form-control" type="text" name="name"
+										placeholder="Họ và tên" required="">
+								</div>
+								<div class="w3_agileits_card_number_grids">
+									<div class="w3_agileits_card_number_grid_left form-group">
+										<div class="controls">
+											<input type="text" class="form-control" placeholder="Số điện thoại"
+												name="phone" required="">
 										</div>
 									</div>
-									<div class="controls form-group">
-										<input type="text" class="form-control" placeholder="Email" name="email" required="">
-									</div>
-									<div class="controls form-group">
-										<input type="text" class="form-control" placeholder="Password" name="password" required="">
-									</div>
-									<div class="controls form-group">
-										<textarea style="resize: none;" class="form-control" placeholder="Ghi chú" name="note" required=""></textarea>
-									</div>
-									<div class="controls form-group">
-										<select class="option-w3ls" name="giaohang">
-											<option>Chọn hình thức thanh toán</option>
-											<option value="1">Chuyển khoản qua ATM</option>
-											<option value="0">Thanh toán khi nhận hàng</option></select>
+									<div class="w3_agileits_card_number_grid_right form-group">
+										<div class="controls">
+											<input type="text" class="form-control" placeholder="Địa chỉ" name="address"
+												required="">
+										</div>
 									</div>
 								</div>
-								<?php
+								<div class="controls form-group">
+									<input type="text" class="form-control" placeholder="Email" name="email"
+										required="">
+								</div>
+								<div class="controls form-group">
+									<input type="text" class="form-control" placeholder="Password" name="password"
+										required="">
+								</div>
+								<div class="controls form-group">
+									<textarea style="resize: none;" class="form-control" placeholder="Ghi chú"
+										name="note" required=""></textarea>
+								</div>
+								<div class="controls form-group">
+									<select class="option-w3ls" name="giaohang">
+										<option>Chọn hình thức thanh toán</option>
+										<option value="1">Chuyển khoản qua ATM</option>
+										<option value="0">Thanh toán khi nhận hàng</option>
+									</select>
+								</div>
+							</div>
+							<?php
 									$sql_lay_giohang = mysqli_query($con,"SELECT * FROM tbl_giohang ORDER BY giohang_id DESC"); 
 									while($row_thanhtoan = mysqli_fetch_array($sql_lay_giohang)){
 										
 								?>
-									<input type="hidden" name="thanhtoan_soluong[]" value="<?php echo $row_thanhtoan['soluong'] ?>">
-                                    <input type="hidden" name="thanhtoan_product_id[]" value="<?php echo $row_thanhtoan['sanpham_id'] ?>">
-								<?php
+							<input type="hidden" name="thanhtoan_soluong[]"
+								value="<?php echo $row_thanhtoan['soluong'] ?>">
+							<input type="hidden" name="thanhtoan_product_id[]"
+								value="<?php echo $row_thanhtoan['sanpham_id'] ?>">
+							<?php
 									}
 								?>
-								<input type="submit" name="thanhtoan" class="btn-thanhtoan" value="Thanh toán" style="width: 20%" />
-							</div>
+							<input type="submit" name="thanhtoan" class="btn-thanhtoan" value="Thanh toán"
+								style="width: 20%" />
 						</div>
-					</form>
+					</div>
+				</form>
 
-				</div>
 			</div>
-			<?php
+		</div>
+		<?php
 				}
 			?>
-		</div>
 	</div>
-	<!-- //checkout page -->
+</div>
+<!-- //checkout page -->

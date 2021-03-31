@@ -13,7 +13,7 @@
                     <nav>
                         <ul>
                             <li class="dropdown-holder"><a href="index.php">Trang chủ</a> </li>
-                            <li class="megamenu-holder"><a href="shop-left-sidebar.html">Sản phẩm</a>
+                            <li class="megamenu-holder"><a href="#">Sản phẩm</a>
                                 <ul class="megamenu hb-megamenu">
                                     <li><a href="#">Danh mục sản phảm</a>
                                         <ul>

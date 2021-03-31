@@ -59,7 +59,7 @@
                                         <input type="hidden" name="giasanpham" value="<?php echo $row_chitiet['sanpham_giakhuyenmai']?>" />
                                         <input type="hidden" name="hinhanh" value="<?php echo $row_chitiet['sanpham_image']?>" />
                                         <input type="hidden" name="soluong" value="1" />
-                                        <input class="add-to-cart" type="submit" value="Thêm giỏ hàng"></input>
+                                        <input class="add-to-cart" name="themgiohang" type="submit" value="Thêm giỏ hàng"></input>
                                     </fieldset>
                                 </form>
                             </div>
@@ -75,7 +75,7 @@
                                 </div>
                             </div>
                             <div class="block-reassurance">
-                                <ul>
+                                <!-- <ul>
                                     <li>
                                         <div class="reassurance-item">
                                             <div class="reassurance-icon">
@@ -100,7 +100,7 @@
                                             <p> Return policy (edit with Customer reassurance module)</p>
                                         </div>
                                     </li>
-                                </ul>
+                                </ul> -->
                             </div>
                         </div>
                     </div>

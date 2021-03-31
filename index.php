@@ -77,6 +77,10 @@
                         include('include/giohang.php');
                     }elseif($tam == 'dangnhap'){
                         include('include/dangnhap.php');
+                    }elseif($tam == 'xemdonhang'){
+                        include('include/xemdonhang.php');
+                    }elseif($tam == 'timkiem'){
+                        include('include/timkiem.php');
                     }else{
                         include('include/slider.php');
                         include('include/home.php');

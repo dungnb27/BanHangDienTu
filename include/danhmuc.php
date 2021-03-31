@@ -99,7 +99,7 @@
                                                                             <input type="hidden" name="giasanpham" value="<?php echo $row_sanpham['sanpham_giakhuyenmai']?>" />
                                                                             <input type="hidden" name="hinhanh" value="<?php echo $row_sanpham['sanpham_image']?>" />
                                                                             <input type="hidden" name="soluong" value="1" />
-                                                                            <input class="add-to-cart" type="submit" value="Thêm giỏ hàng"></input>
+                                                                            <input class="add-to-cart" type="submit" name="themgiohang" value="Thêm giỏ hàng"></input>
                                                                         </fieldset>
                                                                     </form>
                                                                 </div>

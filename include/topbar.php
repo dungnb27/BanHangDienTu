@@ -37,7 +37,7 @@
                                         if(isset($_SESSION['dangnhap_home'])){
                                     ?>
                                         <li><a href="#"><?php echo $_SESSION['dangnhap_home'] ?></a></li>
-                                        <li><a href="checkout.html">Đơn hàng</a></li>
+                                        <li><a href="index.php?quanly=xemdonhang&khachhang=<?php echo $_SESSION['khachhang_id'] ?>">Đơn hàng</a></li>
                                         <li><a href="index.php?dangxuat=1">Đăng xuất</a></li>    
                                     <?php
                                         }else{
@@ -75,13 +75,9 @@
             <!-- Begin Header Middle Right Area -->
             <div class="col-lg-9 pl-0 ml-sm-15 ml-xs-15">
                 <!-- Begin Header Middle Searchbox Area -->
-                <form action="#" class="hm-searchbox">
-                    <select class="nice-select select-search-category">
-                        <option value="0">All</option>
-
-                    </select>
-                    <input type="text" placeholder="Enter your search key ...">
-                    <button class="li-btn" type="submit"><i class="fa fa-search"></i></button>
+                <form action="index.php?quanly=timkiem" method="post" class="hm-searchbox">
+                    <input type="search" name="search_product" placeholder="Tìm kiếm sản phẩm">
+                    <button class="li-btn" name="search_button" type="submit"><i class="fa fa-search"></i></button>
                 </form>
                 <!-- Header Middle Searchbox Area End Here -->
                 <!-- Begin Header Middle Right Area -->
@@ -94,8 +90,8 @@
                         <li class="hm-minicart">
                             
                                 <form action="" method="post">
-                                    
-                                        <input type="submit" class="item-icon" value="Giỏ hàng" name="giohang" style="background: #e80f0f;color: black;">
+                                        
+                                        <input type="submit" value="Giỏ hàng" name="giohang"  class="btn btn-primary" style="background: #fed700;border-color: #fed700;color: black">
                                     
                                 </form>
                         
