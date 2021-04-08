@@ -3,7 +3,6 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                
                 <!-- shop-top-bar start -->
                 <div class="shop-top-bar mt-30">
                     <div class="shop-bar-inner">
@@ -21,23 +20,7 @@
                         <div class="toolbar-amount">
                             <span>TẤT CẢ SẢN PHẨM</span>
                         </div>
-                    </div>
-                    <!-- product-select-box start -->
-                    <!-- <div class="product-select-box">
-                        <div class="product-short">
-                            <p>Sort By:</p>
-                            <select class="nice-select">
-                                <option value="trending">Relevance</option>
-                                <option value="sales">Name (A - Z)</option>
-                                <option value="sales">Name (Z - A)</option>
-                                <option value="rating">Price (Low &gt; High)</option>
-                                <option value="date">Rating (Lowest)</option>
-                                <option value="price-asc">Model (A - Z)</option>
-                                <option value="price-asc">Model (Z - A)</option>
-                            </select>
-                        </div>
-                    </div> -->
-                    <!-- product-select-box end -->
+                    </div> 
                 </div>
                 <!-- shop-top-bar end -->
                 <!-- shop-products-wrapper start -->
@@ -90,7 +73,7 @@
                                                                     <input type="hidden" name="giasanpham" value="<?php echo $row_sanpham['sanpham_giakhuyenmai']?>" />
                                                                     <input type="hidden" name="hinhanh" value="<?php echo $row_sanpham['sanpham_image']?>" />
                                                                     <input type="hidden" name="soluong" value="1" />
-                                                                    <input type="submit" name="themgiohang" value="Thêm giỏ hàng" />
+                                                                    <input type="submit" name="themgiohang" value="Thêm giỏ hàng" style="height: 33.5px;"/>
                                                                 </li>
                                                             </fieldset>
                                                         </form>
@@ -152,12 +135,18 @@
                                         <div class="col-lg-4">
                                             <div class="shop-add-action mb-xs-30">
                                                 <ul class="add-actions-link">
-                                                    <li class="add-cart"><a href="#">Thêm vào giỏ hàng</a></li>
-                                                    <li class="wishlist"><a href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i>Add to wishlist</a></li>
-                                                    <li><a class="quick-view" data-toggle="modal"
-                                                            data-target="#exampleModalCenter" href="#"><i
-                                                                class="fa fa-eye"></i>Quick view</a></li>
+                                                        <form action="?quanly=giohang" method="post">
+                                                            <fieldset>
+                                                                <li class="add-cart active">
+                                                                    <input type="hidden" name="tensanpham" value="<?php echo $row_sanpham['sanpham_name'] ?>" />
+                                                                    <input type="hidden" name="sanpham_id" value="<?php echo $row_sanpham['sanpham_id'] ?>" />
+                                                                    <input type="hidden" name="giasanpham" value="<?php echo $row_sanpham['sanpham_giakhuyenmai']?>" />
+                                                                    <input type="hidden" name="hinhanh" value="<?php echo $row_sanpham['sanpham_image']?>" />
+                                                                    <input type="hidden" name="soluong" value="1" />
+                                                                    <input type="submit" name="themgiohang" value="Thêm giỏ hàng" />
+                                                                </li>
+                                                            </fieldset>
+                                                        </form>
                                                 </ul>
                                             </div>
                                         </div>

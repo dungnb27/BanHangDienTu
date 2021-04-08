@@ -46,6 +46,8 @@
         <link rel="stylesheet" href="css/responsive.css">
         <!-- Modernizr js -->
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v10.0" nonce="KWSZWNHF"></script>
     </head>
     <body>
     <!--[if lt IE 8]>
@@ -81,6 +83,8 @@
                         include('include/xemdonhang.php');
                     }elseif($tam == 'timkiem'){
                         include('include/timkiem.php');
+                    }elseif($tam == 'lienhe'){
+                        include('include/lienhe.php');
                     }else{
                         include('include/slider.php');
                         include('include/home.php');
@@ -104,6 +108,9 @@
             
         </div>
         <!-- Body Wrapper End Here -->
+
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v10.0" nonce="KWSZWNHF"></script>
         <!-- jQuery-V1.12.4 -->
         <script src="js/vendor/jquery-1.12.4.min.js"></script>
         <!-- Popper js -->

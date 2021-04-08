@@ -31,24 +31,26 @@
                                 </ul>
                             </li>
                           
-
-
-                            <li class="dropdown-holder"><a href="blog-left-sidebar.html">Tin tức</a>
-                                <ul class="hb-dropdown">
-                                    <?php
-                                        while($row_danhmuctin = mysqli_fetch_array($sql_danhmuctin)){
-                                    ?>
-                                    <li class="sub-dropdown-holder"><a href="?quanly=tintuc&id_tin=<?php echo $row_danhmuctin['danhmuctin_id'] ?>"><?php echo $row_danhmuctin['tendanhmuc'] ?></a>
-                                        
+                            <li class="megamenu-holder"><a href="#">Tin tức</a>
+                                <ul class="megamenu hb-megamenu">
+                                    <li><a href="#">Danh mục tin tức</a>
+                                        <ul>
+                                            <?php
+                                               while($row_danhmuctin = mysqli_fetch_array($sql_danhmuctin)){
+                                            ?>
+                                                <li><a href="?quanly=tintuc&id_tin=<?php echo $row_danhmuctin['danhmuctin_id'] ?>"><?php echo $row_danhmuctin['tendanhmuc'] ?></a></li>
+                                            <?php
+                                                }
+                                            ?>
+                                            
+                                        </ul>
                                     </li>
-                                    <?php
-                                        }
-                                    ?>
                                     
                                 </ul>
                             </li>
+
                             
-                            <li><a href="contact.html">Liên hệ</a></li>
+                            <li><a href="?quanly=lienhe">Liên hệ</a></li>
                         </ul>
                     </nav>
                 </div>

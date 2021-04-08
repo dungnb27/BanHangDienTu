@@ -15,8 +15,10 @@
                 $_SESSION['dangnhap_home'] = $row_dangnhap['name'];
 				$_SESSION['khachhang_id'] = $row_dangnhap['khachhang_id'];
 				$_SESSION['khachhang_name'] = $row_dangnhap['name'];
-                //header('Location: /index.php?quanly=giohang');
-                // echo '<script>alert("Đăng nhập thành công")</script>';
+                echo '<script>alert("Đăng nhập thành công")</script>';
+                echo "<script>location.href = 'index.php';</script>";
+                // header('Location: /index.php');
+                
             }else{
                 echo '<script>alert("Tài khoản hoặc mật khẩu sai")</script>';
             }
@@ -38,11 +40,12 @@
 		$_SESSION['dangnhap_home'] = $name;
 		$_SESSION['khachhang_id'] = $row_khachhang['khachhang_id'];
 		$_SESSION['khachhang_name'] = $row_khachhang['name'];
-		header('Location: index.php?quanly=giohang');
+        echo "<script>location.href = 'index.php';</script>";
+		//header('Location: index.php?quanly=giohang');
 	}
-	if(isset($_POST['giohang'])){
-		header('Location: index.php?quanly=giohang');
-	}
+	// if(isset($_POST['giohang'])){
+	// 	header('Location: index.php?quanly=giohang');
+	// }
 ?>
 
 <!-- Begin Li's Breadcrumb Area -->

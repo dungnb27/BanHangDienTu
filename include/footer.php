@@ -12,8 +12,8 @@
                                             <img src="images/shipping-icon/1.png" alt="Shipping Icon">
                                         </div>
                                         <div class="shipping-text">
-                                            <h2>Free Delivery</h2>
-                                            <p>And free returns. See checkout for delivery dates.</p>
+                                            <h2>Miễn phí vận chuyển</h2>
+                                            <p>Miễn phí đổi trả, kiểm tra khi nhận hàng</p>
                                         </div>
                                     </div>
                                 </div>
@@ -25,8 +25,8 @@
                                             <img src="images/shipping-icon/2.png" alt="Shipping Icon">
                                         </div>
                                         <div class="shipping-text">
-                                            <h2>Safe Payment</h2>
-                                            <p>Pay with the world's most popular and secure payment methods.</p>
+                                            <h2>Thanh toán an toàn</h2>
+                                            <p>Thanh toán bằng những hình thức thanh toán tốt nhất hiện nay.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -38,8 +38,8 @@
                                             <img src="images/shipping-icon/3.png" alt="Shipping Icon">
                                         </div>
                                         <div class="shipping-text">
-                                            <h2>Shop with Confidence</h2>
-                                            <p>Our Buyer Protection covers your purchasefrom click to delivery.</p>
+                                            <h2>Mua sắm an toàn</h2>
+                                            <p>Bạn sẽ được đảm bảo từ khi chọn mua cho tới lúc nhận hàng</p>
                                         </div>
                                     </div>
                                 </div>
@@ -51,8 +51,8 @@
                                             <img src="images/shipping-icon/4.png" alt="Shipping Icon">
                                         </div>
                                         <div class="shipping-text">
-                                            <h2>24/7 Help Center</h2>
-                                            <p>Have a question? Call a Specialist or chat online.</p>
+                                            <h2>Hỗ trợ 24/7</h2>
+                                            <p>Liên hệ với chúng tôi bất cứ khi nào bạn cần</p>
                                         </div>
                                     </div>
                                 </div>
@@ -78,8 +78,8 @@
                                     </div>
                                     <ul class="des">
                                         <li>
-                                            <span>Địa chỉ: </span>
-                                            6688Princess Road, London, Greater London BAS 23JK, UK
+                                            <br><span>Địa chỉ: </span>
+                                            Hồ Chí Minh
                                         </li>
                                         <li>
                                             <span>Điên thoại: </span>
@@ -98,9 +98,6 @@
                                         <h3 class="footer-block-title">Sản phẩm</h3>
                                         <ul>
                                             <li><a href="#">Prices drop</a></li>
-                                            <li><a href="#">New products</a></li>
-                                            <li><a href="#">Best sales</a></li>
-                                            <li><a href="#">Contact us</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -108,12 +105,9 @@
                                 <!-- Begin Footer Block Area -->
                                 <div class="col-lg-2 col-md-3 col-sm-6">
                                     <div class="footer-block">
-                                        <h3 class="footer-block-title">Our company</h3>
+                                        <h3 class="footer-block-title">Tin tức</h3>
                                         <ul>
                                             <li><a href="#">Delivery</a></li>
-                                            <li><a href="#">Legal Notice</a></li>
-                                            <li><a href="#">About us</a></li>
-                                            <li><a href="#">Contact us</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -121,7 +115,7 @@
                                 <!-- Begin Footer Block Area -->
                                 <div class="col-lg-4">
                                     <div class="footer-block">
-                                        <h3 class="footer-block-title">Follow Us</h3>
+                                        <h3 class="footer-block-title">Theo dõi chúng tôi</h3>
                                         <ul class="social-link">
                                             <li class="twitter">
                                                 <a href="https://twitter.com/" data-toggle="tooltip" target="_blank" title="Twitter">
@@ -155,19 +149,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <!-- Begin Footer Newsletter Area -->
-                                    <div class="footer-newsletter">
-                                        <h4>Sign up to newsletter</h4>
-                                        <form action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="footer-subscribe-form validate" target="_blank" novalidate>
-                                           <div id="mc_embed_signup_scroll">
-                                              <div id="mc-form" class="mc-form subscribe-form form-group" >
-                                                <input id="mc-email" type="email" autocomplete="off" placeholder="Enter your email" />
-                                                <button  class="btn" id="mc-submit">Subscribe</button>
-                                              </div>
-                                           </div>
-                                        </form>
-                                    </div>
-                                    <!-- Footer Newsletter Area End Here -->
+                                    
                                 </div>
                                 <!-- Footer Block Area End Here -->
                             </div>

@@ -3427,7 +3427,8 @@ li.right-menu .cat-mega-menu-2 > li {
 .shop-add-action .add-actions-link li.wishlist, 
 .shop-add-action .add-actions-link li:last-child {
 	display: block;
-	width: 100%;
+	width: 50%;
+    height: 47px;
 	background: transparent;
 }
 .shop-add-action .add-actions-link li.wishlist a,
