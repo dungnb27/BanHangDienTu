@@ -64,7 +64,9 @@
 				$sql_giaodich = mysqli_query($con,"INSERT INTO tbl_giaodich(sanpham_id, soluong, magiaodich, khachhang_id) VALUES ('$sanpham_id','$soluong','$mahang','$khachhang_id')");
 				$sql_delete_thanhtoan = mysqli_query($con,"DELETE FROM tbl_giohang WHERE sanpham_id = '$sanpham_id'");
 			}		
-		}	
+		}
+		echo '<script>alert("Đặt hàng thành công")</script>';
+        echo "<script>location.href = 'index.php?quanly=giohang';</script>";	
 	}elseif(isset($_POST['thanhtoandangnhap'])){
 		$khachhang_id = $_SESSION['khachhang_id'];
 		$mahang = rand(0,9999);
@@ -75,6 +77,8 @@
 			$sql_giaodich = mysqli_query($con,"INSERT INTO tbl_giaodich(sanpham_id, soluong, magiaodich, khachhang_id) VALUES ('$sanpham_id','$soluong','$mahang','$khachhang_id')");
 			$sql_delete_thanhtoan = mysqli_query($con,"DELETE FROM tbl_giohang WHERE sanpham_id = '$sanpham_id'");
 		}
+	}elseif(isset($_POST['thanhtoannganluong'])){
+		echo "<script>location.href = 'include/index_thanhtoan.php';</script>";
 	}
 ?>
 <!-- Begin Li's Breadcrumb Area -->
@@ -152,7 +156,7 @@
 							<div class="coupon-all">
 								
 								<div class="coupon2">
-									<input  name="capnhatsoluong" value="Cập nhật giỏ hàng" type="submit" style="background: #fed700;" class="btn btn-primary">
+									<input  name="capnhatsoluong" value="Cập nhật giỏ hàng" type="submit" style="background: #fed700; color: black;" class="btn btn-primary">
 									
 								</div>
 							</div>
@@ -176,7 +180,8 @@
 								<?php
 									}
 								?>
-									<input type="submit" style="background: #fed700;" class="btn btn-primary" value="Thanh toán" name="thanhtoandangnhap">
+									<br><input type="submit" style="background: #fed700;color: black;" class="btn btn-primary" value="Thanh toán" name="thanhtoandangnhap">
+									<br><br><input type="submit" style="background: #fed700;color: black;" class="btn btn-primary" value="Thanh toán ngân lượng" name="thanhtoannganluong">	
 								<?php
 									}
 								?>

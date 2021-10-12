@@ -85,6 +85,10 @@
                         include('include/timkiem.php');
                     }elseif($tam == 'lienhe'){
                         include('include/lienhe.php');
+                    }elseif($tam == 'tintuc'){
+                        include('include/tintuc.php');
+                    }elseif($tam == 'chitiettin'){
+                        include('include/chitiettin.php');
                     }else{
                         include('include/slider.php');
                         include('include/home.php');
@@ -103,9 +107,6 @@
                 </div>
                 <!-- Mobile Menu Area End Here -->
             </header>
-            
-            
-            
         </div>
         <!-- Body Wrapper End Here -->
 
